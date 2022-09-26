@@ -1,3 +1,9 @@
+# IDEcube config folder
+.metadata
+
+# vscode config folder
+.vscode
+
 # Prerequisites
 *.d
 
