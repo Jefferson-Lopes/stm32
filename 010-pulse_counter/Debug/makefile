@@ -60,8 +60,8 @@ all: main-build
 main-build: 010-pulse_counter.elf secondary-outputs
 
 # Tool invocations
-010-pulse_counter.elf 010-pulse_counter.map: $(OBJS) $(USER_OBJS) /home/embedded03/Documents/GitHub/stm32/010-RPM/STM32F767ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "010-pulse_counter.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/embedded03/Documents/GitHub/stm32/010-RPM/STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="010-pulse_counter.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+010-pulse_counter.elf 010-pulse_counter.map: $(OBJS) $(USER_OBJS) /home/embedded03/Documents/GitHub/stm32/010-pulse_counter/STM32F767ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "010-pulse_counter.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/home/embedded03/Documents/GitHub/stm32/010-pulse_counter/STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="010-pulse_counter.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
